@@ -1,21 +1,63 @@
-import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 const projects = [
   {
     title: 'Rebalance Qi',
-    description: 'A wellness services website featuring online booking integration and service management.',
-    image: '/acupuncture_needles.png',
+    description: 'A comprehensive wellness services platform featuring online booking integration, service management, and a modern responsive design. This completed project showcases a seamless user experience for booking acupuncture and Chinese medicine services.',
+    image: '/Home-Rebalance-Qi-Acupuncture-Chinese-Medicine.png',
     link: 'https://rebalanceqi.co.nz',
-    tech: ['React', 'Node.js', 'Fresha (Online Bookings & Payments)'],
+    tech: [
+      'React 18',
+      'TypeScript',
+      'Vite',
+      'TailwindCSS',
+      'React Router DOM',
+      'React Hook Form',
+      'Zod',
+      'Nodemailer',
+      'Fresha Integration',
+      'React Helmet Async'
+    ],
+    status: 'Completed'
   },
   {
     title: 'Clean Sweep Duo',
-    description: 'Interactive calendar system with subscription options and payment integration.',
-    image: '/acupuncture_needles.png',
+    description: 'A modern rubbish removal and waste management platform featuring an advanced booking system, real-time driver tracking, and integrated payment processing. The platform streamlines waste collection services for both residential and commercial clients.',
+    image: '/Clean-Sweep-Duo.png',
     link: 'https://cleansweepduo.com',
-    tech: ['React', 'Node.js', 'Calendar API', 'Payment Gateway'],
+    tech: [
+      'Next.js 14',
+      'React 18',
+      'TypeScript',
+      'TailwindCSS',
+      'Supabase',
+      'PostgreSQL',
+      'Stripe',
+      'SendGrid',
+      'Twilio',
+      'Mapbox'
+    ],
+    status: 'In Progress'
   },
+  {
+    title: 'Duo Linko',
+    description: 'A sophisticated web design agency platform that provides customized website solutions through an intelligent package recommendation system. Features include detailed requirements gathering, portfolio showcase, and seamless project management.',
+    image: '/Duo-Linko.png',
+    link: 'https://duolinko.com',
+    tech: [
+      'Next.js 15',
+      'React 19',
+      'TypeScript',
+      'TailwindCSS',
+      'Radix UI',
+      'Framer Motion',
+      'OpenAI SDK',
+      'Stripe',
+      'Resend',
+      'React Hook Form'
+    ],
+    status: 'In Progress'
+  }
 ];
 
 export default function Projects() {
@@ -33,16 +75,33 @@ export default function Projects() {
               key={index}
               className="group relative bg-gray-800 rounded-lg overflow-hidden transform transition-all hover:-translate-y-2"
             >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transform transition-transform group-hover:scale-110"
-                />
+              <div className="relative h-[400px] overflow-hidden">
+                <div className="absolute w-full animate-scroll-y">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full object-cover"
+                  />
+                  {/* Duplicate image for seamless scrolling */}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full object-cover"
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-bold">{project.title}</h3>
+                  <span className={`text-sm px-2 py-1 rounded ${
+                    project.status === 'Completed' 
+                      ? 'bg-green-500/20 text-green-400'
+                      : 'bg-yellow-500/20 text-yellow-400'
+                  }`}>
+                    {project.status}
+                  </span>
+                </div>
                 <p className="text-gray-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, techIndex) => (
@@ -54,24 +113,14 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-4">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-purple-400 hover:text-purple-300"
-                  >
-                    <ExternalLink size={16} />
-                    <span>Live Demo</span>
-                  </a>
-                  <a
-                    href="#"
-                    className="flex items-center space-x-2 text-purple-400 hover:text-purple-300"
-                  >
-                    <Github size={16} />
-                    <span>Source Code</span>
-                  </a>
-                </div>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-purple-400 hover:text-purple-300"
+                >
+                  Visit Website <ExternalLink className="ml-1 h-4 w-4" />
+                </a>
               </div>
             </div>
           ))}
