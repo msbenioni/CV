@@ -5,14 +5,14 @@ const projects = [
   {
     title: 'Rebalance Qi',
     description: 'A wellness services website featuring online booking integration and service management.',
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800',
+    image: '/acupuncture_needles.png',
     link: 'https://rebalanceqi.co.nz',
-    tech: ['React', 'Node.js', 'Stripe', 'Booking API'],
+    tech: ['React', 'Node.js', 'Fresha (Online Bookings & Payments)'],
   },
   {
     title: 'Clean Sweep Duo',
     description: 'Interactive calendar system with subscription options and payment integration.',
-    image: 'https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?auto=format&fit=crop&w=800',
+    image: '/acupuncture_needles.png',
     link: 'https://cleansweepduo.com',
     tech: ['React', 'Node.js', 'Calendar API', 'Payment Gateway'],
   },

@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="text-center">
         <h1 className="text-4xl sm:text-6xl font-bold mb-4 animate-fade-in">
           <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-            Your Name
+            Jasmin Benioni
           </span>
         </h1>
         <p className="text-xl sm:text-2xl text-gray-300 mb-8 animate-fade-in-delayed">

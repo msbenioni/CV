@@ -94,7 +94,7 @@ function App() {
             </a>
           </div>
           <p className="mt-4 text-center text-gray-400">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Jasmin Benioni. All rights reserved.
           </p>
         </div>
       </footer>
