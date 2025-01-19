@@ -1,12 +1,62 @@
-import React from 'react';
+interface SkillCategory {
+  title: string;
+  skills: string[];
+}
 
-const skills = [
-  { name: 'HTML/CSS', level: 90 },
-  { name: 'JavaScript/TypeScript', level: 85 },
-  { name: 'React.js', level: 85 },
-  { name: 'Node.js', level: 80 },
-  { name: 'Docker', level: 75 },
-  { name: 'MySQL', level: 80 },
+const skillCategories: SkillCategory[] = [
+  {
+    title: "Software Development",
+    skills: [
+      "JavaScript, HTML, CSS",
+      "React.js, Node.js",
+      "MySQL, MongoDB",
+      "API Development & Integration"
+    ]
+  },
+  {
+    title: "ERP Systems",
+    skills: [
+      "SAP ECC (Materials Management, P2P processes)",
+      "SAP Ariba (Source-to-Contract, Supplier Management)",
+      "Zycus (Contracts Management System)",
+      "Ellipse (ERP integration and payment reconciliation)"
+    ]
+  },
+  {
+    title: "Cloud & Tools",
+    skills: [
+      "AWS, GCP",
+      "Git, GitHub",
+      "CI/CD pipelines",
+      "Debugging & Testing Tools"
+    ]
+  },
+  {
+    title: "Procurement & Contracts",
+    skills: [
+      "Managing purchase orders, RFQs, and contract milestones",
+      "Negotiation and supplier onboarding",
+      "Streamlining procurement workflows"
+    ]
+  },
+  {
+    title: "Process & Analytics",
+    skills: [
+      "Process optimization and efficiency improvements",
+      "Data analysis for decision-making",
+      "Cross-departmental collaboration",
+      "Training and knowledge transfer"
+    ]
+  },
+  {
+    title: "Professional Skills",
+    skills: [
+      "Problem-solving and critical thinking",
+      "Time management and multitasking",
+      "Strong communication and presentation",
+      "Adaptability and continuous learning"
+    ]
+  }
 ];
 
 export default function Skills() {
@@ -18,19 +68,26 @@ export default function Skills() {
             Skills & Expertise
           </span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skills.map((skill, index) => (
-            <div key={index} className="group">
-              <div className="flex justify-between mb-2">
-                <span className="text-gray-300">{skill.name}</span>
-                <span className="text-gray-400">{skill.level}%</span>
-              </div>
-              <div className="h-3 bg-gray-700 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-gradient-to-r from-purple-500 to-pink-500 transform origin-left transition-transform duration-1000 scale-x-0 group-hover:scale-x-100"
-                  style={{ width: `${skill.level}%` }}
-                ></div>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {skillCategories.map((category, index) => (
+            <div 
+              key={index} 
+              className="bg-gray-800 rounded-lg p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <h3 className="text-xl font-semibold mb-4 text-purple-400">
+                {category.title}
+              </h3>
+              <ul className="space-y-2">
+                {category.skills.map((skill, skillIndex) => (
+                  <li 
+                    key={skillIndex}
+                    className="text-gray-300 hover:text-white flex items-center space-x-2"
+                  >
+                    <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
+                    <span>{skill}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
