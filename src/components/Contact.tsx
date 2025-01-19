@@ -1,17 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+  useEffect(() => {
+    emailjs.init('uRQyRbpeQdm3MArUg');
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setStatus('sending');
+    setErrorMessage('');
+
+    try {
+      await emailjs.send(
+        'service_l91kskv', // You'll get this from EmailJS
+        'template_eivoze3', // You'll get this from EmailJS
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Jasmin', // Your name
+          to_email: 'msbenioni@gmail.com', // Your email
+        },
+        'uRQyRbpeQdm3MArUg' // You'll get this from EmailJS
+      );
+      
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage('Failed to send message. Please try again later.');
+      console.error('EmailJS Error:', error);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -44,6 +73,7 @@ export default function Contact() {
                   onChange={handleChange}
                   className="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                   required
+                  disabled={status === 'sending'}
                 />
               </div>
               <div>
@@ -58,6 +88,7 @@ export default function Contact() {
                   onChange={handleChange}
                   className="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                   required
+                  disabled={status === 'sending'}
                 />
               </div>
               <div>
@@ -72,14 +103,32 @@ export default function Contact() {
                   rows={4}
                   className="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                   required
+                  disabled={status === 'sending'}
                 ></textarea>
               </div>
+              {status === 'error' && (
+                <div className="text-red-500 text-sm">{errorMessage}</div>
+              )}
+              {status === 'success' && (
+                <div className="text-green-500 text-sm">Message sent successfully!</div>
+              )}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white transition-colors"
+                disabled={status === 'sending'}
+                className={`w-full flex items-center justify-center px-6 py-3 rounded-lg text-white font-medium transition-colors ${
+                  status === 'sending'
+                    ? 'bg-gray-600 cursor-not-allowed'
+                    : 'bg-purple-600 hover:bg-purple-700'
+                }`}
               >
-                <Send size={20} />
-                <span>Send Message</span>
+                {status === 'sending' ? (
+                  <>Sending...</>
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="ml-2 h-4 w-4" />
+                  </>
+                )}
               </button>
             </form>
             <div className="mt-8 pt-8 border-t border-gray-700">

@@ -147,7 +147,7 @@ export default function Experience() {
         </h2>
         <div className="relative">
           <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gray-700"></div>
-          <div className="space-y-12">
+          <div className="space-y-12 mt-16 md:mt-12">
             {experiences.map((exp, index) => (
               <div
                 key={index}
@@ -216,7 +216,7 @@ export default function Experience() {
                       )}
                     </div>
                   </div>
-                  <div className="absolute left-1/2 top-0 transform -translate-x-1/2 flex items-center justify-center">
+                  <div className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-16 md:-translate-y-0 flex items-center justify-center">
                     <div className="w-12 h-12 rounded-full border-4 border-gray-900 bg-purple-600 flex items-center justify-center">
                       <Briefcase size={20} />
                     </div>

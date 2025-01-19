@@ -16,8 +16,8 @@ export default function About() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg transform rotate-6"></div>
             <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800"
-              alt="Workspace"
+              src="/jasmin1.png"
+              alt="Jasmin Profile"
               className="relative rounded-lg shadow-xl"
             />
           </div>
