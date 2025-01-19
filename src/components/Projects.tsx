@@ -75,18 +75,20 @@ export default function Projects() {
               key={index}
               className="group relative bg-gray-800 rounded-lg overflow-hidden transform transition-all hover:-translate-y-2"
             >
-              <div className="relative h-[400px] overflow-hidden">
-                <div className="absolute w-full animate-scroll-y">
+              <div className="relative aspect-[16/9] sm:aspect-[3/2] lg:aspect-[16/9] overflow-hidden project-image-container">
+                <div className="h-full md:h-[200%]">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full object-cover"
+                    className="w-full h-1/2 md:h-1/2 object-cover object-top md:animate-scroll-y"
+                    loading="lazy"
                   />
-                  {/* Duplicate image for seamless scrolling */}
+                  {/* Duplicate image for seamless scrolling on desktop */}
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full object-cover"
+                    className="hidden md:block w-full h-1/2 md:h-1/2 object-cover object-top"
+                    loading="lazy"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
