@@ -10,7 +10,7 @@ export default function Hero() {
           </span>
         </h1>
         <p className="text-xl sm:text-2xl text-gray-300 mb-8 animate-fade-in-delayed">
-          Dynamic IT Professional | Passionate About Software Development
+          Full Stack Developer | Systems Integration Specialist | Digital Innovator
         </p>
         <div className="space-x-4 animate-fade-in-delayed-more">
           <a
