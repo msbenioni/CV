@@ -1,4 +1,3 @@
-import React from 'react';
 import { GraduationCap } from 'lucide-react';
 
 export default function Education() {
@@ -19,19 +18,33 @@ export default function Education() {
               />
             </div>
             <h3 className="text-xl font-bold mb-2">
-              Diploma in Digital Technology Development and Design
+              MISSION READY HQ
             </h3>
-            <p className="text-purple-400 mb-4">Institution Name • 2018</p>
-            <div className="space-y-4 text-gray-300">
-              <p>
-                Comprehensive program covering modern web development technologies and design principles.
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-gray-400">
-                <li>Full-stack web development</li>
-                <li>UI/UX design principles</li>
-                <li>Database management</li>
-                <li>Project management methodologies</li>
-              </ul>
+            <p className="text-purple-400 mb-4">Diploma in Digital Technology Development and Design • Aug 2024 - current • Auckland, NZ</p>
+            <div className="space-y-6 text-gray-300">
+              <div>
+                <h4 className="text-lg font-semibold text-purple-400 mb-2">Component 1: Full Stack Developer</h4>
+                <ul className="list-disc list-inside space-y-2 text-gray-400 ml-4">
+                  <li>Developed expertise in creating responsive web applications using modern frameworks and libraries</li>
+                  <li>Mastered server-side development and database management with focus on security best practices</li>
+                  <li>Implemented professional development workflows using IDEs and source code management tools</li>
+                  <li>Applied industry-standard coding practices and software licensing principles</li>
+                  <li>Gained proficiency in unit testing and quality assurance methodologies</li>
+                  <li>Explored emerging technologies including generative AI applications</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="text-lg font-semibold text-purple-400 mb-2">Component 2: Advanced Full Stack Developer (Cloud & AI)</h4>
+                <ul className="list-disc list-inside space-y-2 text-gray-400 ml-4">
+                  <li>Implemented cloud services and AI solutions for enterprise-level applications</li>
+                  <li>Designed and developed systems using modern architectural patterns and DevOps practices</li>
+                  <li>Built advanced database solutions utilizing NoSQL and GraphQL technologies</li>
+                  <li>Created and integrated RESTful APIs and JSON-based services</li>
+                  <li>Applied Agile methodologies and Design Thinking principles in project development</li>
+                  <li>Gained practical experience working in collaborative project teams</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

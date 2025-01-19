@@ -113,14 +113,20 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-purple-400 hover:text-purple-300"
-                >
-                  Visit Website <ExternalLink className="ml-1 h-4 w-4" />
-                </a>
+                {project.title === 'Duo Linko' ? (
+                  <span className="inline-flex items-center text-gray-400 cursor-not-allowed">
+                    Live Site Coming Soon <ExternalLink className="ml-1 h-4 w-4" />
+                  </span>
+                ) : (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-purple-400 hover:text-purple-300"
+                  >
+                    Visit Website <ExternalLink className="ml-1 h-4 w-4" />
+                  </a>
+                )}
               </div>
             </div>
           ))}

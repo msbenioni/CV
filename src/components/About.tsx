@@ -12,13 +12,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-gray-300 leading-relaxed">
-              I'm a passionate software developer with expertise in modern web technologies. 
-              My journey in tech has equipped me with a strong foundation in both front-end 
-              and back-end development, allowing me to create seamless, user-centric applications.
-            </p>
-            <p className="text-gray-300 leading-relaxed">
-              With a focus on clean code and innovative solutions, I strive to build applications 
-              that not only meet technical requirements but also provide exceptional user experiences.
+              I bring a solid background in contracts administration and procurement, complemented by extensive hands-on experience in systems integration and management. Completing a Diploma in Digital Technology Development and Design has not only advanced my technical and software development expertise but also ignited a newfound passion for software development. My professional experience has honed my ability to manage complex systems, optimize processes, and deliver exceptional customer experiences. I am driven by the opportunity to leverage technology to address real-world challenges and am eager to contribute my skills and enthusiasm to a dynamic team.
             </p>
           </div>
           <div className="relative">
@@ -28,6 +22,19 @@ export default function About() {
               alt="Workspace"
               className="relative rounded-lg shadow-xl"
             />
+          </div>
+        </div>
+
+        <div className="mt-20">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+              Professional Summary
+            </span>
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-gray-300 leading-relaxed text-center">
+              Dynamic IT professional with a Diploma in Digital Technology Development and Design from Mission Ready HQ. Proficient in developing and managing software systems, e-commerce platforms, and integrating procurement tools with cloud-based technologies. Experienced in utilizing ERP systems (SAP, Ellipse) and procurement systems (Ariba, Zycus) to streamline operations. Adept at problem-solving, multitasking, and delivering exceptional customer service. Excels in collaborative environments and continuously seeks opportunities to leverage and expand technical skills. Fluent in English and French, with a strong passion for technology and innovation.
+            </p>
           </div>
         </div>
       </div>

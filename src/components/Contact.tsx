@@ -85,7 +85,7 @@ export default function Contact() {
             <div className="mt-8 pt-8 border-t border-gray-700">
               <div className="flex items-center justify-center space-x-2 text-gray-400">
                 <Mail size={20} />
-                <span>your.email@example.com</span>
+                <span>msbenioni@gmail.com</span>
               </div>
             </div>
           </div>

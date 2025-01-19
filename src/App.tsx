@@ -83,18 +83,18 @@ function App() {
       <footer className="bg-gray-900 border-t border-gray-800">
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center space-x-6">
-            <a href="https://github.com" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://github.com/msbenioni" className="text-gray-400 hover:text-white transition-colors">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://nz.linkedin.com/in/jasminbenioni" className="text-gray-400 hover:text-white transition-colors">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:your.email@example.com" className="text-gray-400 hover:text-white transition-colors">
+            <a href="mailto:msbenioni@gmail.com" className="text-gray-400 hover:text-white transition-colors">
               <Mail size={24} />
             </a>
           </div>
           <p className="mt-4 text-center text-gray-400">
-            © {new Date().getFullYear()} Jasmin Benioni. All rights reserved.
+            {new Date().getFullYear()} Jasmin Benioni. All rights reserved.
           </p>
         </div>
       </footer>
