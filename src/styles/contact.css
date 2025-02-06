@@ -1,0 +1,120 @@
+/* Contact form animations */
+.contact-card {
+  position: relative;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+}
+
+.form-input {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-input::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #a855f7;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.form-input:focus-within::after {
+  transform: translateX(0);
+}
+
+/* Button animations */
+.submit-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #a855f7;
+}
+
+.submit-button:hover {
+  background: #9333ea;
+}
+
+.submit-button:hover .button-content {
+  transform: translateY(-2px);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s ease;
+}
+
+/* Success animation */
+@keyframes successPop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-message {
+  animation: successPop 0.5s ease forwards;
+}
+
+/* Email icon animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating-email {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Form field focus effect */
+.form-field {
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.form-field:focus-within {
+  transform: translateY(-2px);
+}
+
+/* Label animation */
+.form-label {
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.form-field:focus-within .form-label {
+  opacity: 1;
+  color: #a855f7;
+  transform: translateY(-2px);
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
