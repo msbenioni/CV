@@ -4,7 +4,7 @@ const projects = [
   {
     title: 'Rebalance Qi',
     description: 'A comprehensive wellness services platform featuring online booking integration, service management, and a modern responsive design. This completed project showcases a seamless user experience for booking acupuncture and Chinese medicine services.',
-    image: '/Home-Rebalance-Qi-Acupuncture-Chinese-Medicine.png',
+    image: '/Rebalance-Qi.webp',
     link: 'https://rebalanceqi.co.nz',
     containerWidth: 'lg:w-[600px]',
     imageHeight: 'h-[600px]',
@@ -25,9 +25,9 @@ const projects = [
   {
     title: 'Clean Sweep Duo',
     description: 'A modern rubbish removal and waste management platform featuring an advanced booking system, real-time driver tracking, and integrated payment processing. The platform streamlines waste collection services for both residential and commercial clients.',
-    image: '/Clean-Sweep-Duo.png',
+    image: '/Clean-Sweep-Duo.webp',
     link: 'https://cleansweepduo.com',
-    containerWidth: 'lg:w-[800px]',
+    containerWidth: 'lg:w-[600px]',
     imageHeight: 'h-[600px]',
     tech: [
       'Next.js 14',
@@ -41,14 +41,14 @@ const projects = [
       'Twilio',
       'Mapbox'
     ],
-    status: 'In Progress'
+    status: 'Completed'
   },
   {
     title: 'Duo Linko',
     description: 'A sophisticated web design agency platform that provides customized website solutions through an intelligent package recommendation system. Features include detailed requirements gathering, portfolio showcase, and seamless project management.',
-    image: '/Duo-Linko.png',
+    image: '/Duo-Linko.webp',
     link: 'https://duolinko.com',
-    containerWidth: 'lg:w-[800px]',
+    containerWidth: 'lg:w-[600px]',
     imageHeight: 'h-[600px]',
     tech: [
       'Next.js 15',
@@ -62,7 +62,7 @@ const projects = [
       'Resend',
       'React Hook Form'
     ],
-    status: 'In Progress'
+    status: 'Completed'
   }
 ];
 
@@ -109,20 +109,14 @@ export default function Projects() {
                   </div>
                 </div>
                 <div>
-                  {project.title === 'Duo Linko' ? (
-                    <span className="inline-flex items-center text-gray-400 cursor-not-allowed">
-                      Live Site Coming Soon <ExternalLink className="ml-1 h-4 w-4" />
-                    </span>
-                  ) : (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-purple-400 hover:text-purple-300"
-                    >
-                      Visit Website <ExternalLink className="ml-1 h-4 w-4" />
-                    </a>
-                  )}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-purple-400 hover:text-purple-300"
+                  >
+                    Visit Website <ExternalLink className="ml-1 h-4 w-4" />
+                  </a>
                 </div>
               </div>
 
