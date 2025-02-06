@@ -1,0 +1,117 @@
+/* Education card animations */
+.education-card {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.education-card:hover {
+  transform: translateY(-8px);
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  z-index: -1;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.education-card:hover::before {
+  opacity: 1;
+}
+
+.education-content {
+  background: rgba(31, 41, 55, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.component-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.education-card:hover .component-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation for list items */
+.skill-list li {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.3s ease;
+}
+
+.education-card:hover .skill-list li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skill-list li:nth-child(1) { transition-delay: 0.1s; }
+.skill-list li:nth-child(2) { transition-delay: 0.2s; }
+.skill-list li:nth-child(3) { transition-delay: 0.3s; }
+.skill-list li:nth-child(4) { transition-delay: 0.4s; }
+.skill-list li:nth-child(5) { transition-delay: 0.5s; }
+.skill-list li:nth-child(6) { transition-delay: 0.6s; }
+
+/* Floating animation for icon */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.floating-icon {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glowing dot for list items */
+.skill-dot {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(45deg, #a855f7, #ec4899);
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.skill-dot::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #a855f7, #ec4899);
+  animation: pulse 2s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}

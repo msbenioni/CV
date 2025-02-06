@@ -1,4 +1,5 @@
-import { Briefcase } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import '../styles/experience.css';
 
 const experiences = [
   {
@@ -140,91 +141,97 @@ export default function Experience() {
   return (
     <section id="experience" className="py-20 bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">
+        <h2 className="text-5xl font-bold text-center mb-12">
           <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
             Work Experience
           </span>
         </h2>
-        <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gray-700"></div>
-          <div className="space-y-12 mt-16 md:mt-12">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="relative group"
-                style={{ opacity: 0, animation: `fadeIn 0.5s ease-out ${index * 0.2}s forwards` }}
-              >
-                <div className="flex items-start">
-                  <div className="flex-1 md:pr-12 group-even:md:pr-0 group-even:md:pl-12">
-                    <div className="p-6 bg-gray-800 rounded-lg transform transition-transform group-hover:-translate-y-1">
-                      <h3 className="text-xl font-bold mb-1">{exp.title}</h3>
-                      {exp.company && (
-                        <p className="text-purple-400 mb-1">{exp.company}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className="group card-container"
+              style={{ opacity: 0, animation: `fadeIn 0.5s ease-out ${index * 0.2}s forwards` }}
+            >
+              <div className="card">
+                {/* Front of card */}
+                <div className="card-face card-front">
+                  <div className="p-8 bg-gray-800 rounded-lg h-full flex flex-col justify-center items-center text-center card-content">
+                    <h3 className="text-3xl font-bold mb-4">{exp.title}</h3>
+                    {exp.company && (
+                      <p className="text-purple-400 text-xl mb-4">{exp.company}</p>
+                    )}
+                    <div className="flex flex-col items-center gap-2">
+                      <p className="text-gray-400 text-lg">{exp.period}</p>
+                      {exp.note && (
+                        <span className="text-gray-500 text-lg">
+                          {exp.note}
+                        </span>
                       )}
-                      <div className="flex items-center gap-2 mb-4">
-                        <p className="text-gray-400 text-sm">{exp.period}</p>
-                        {exp.note && (
-                          <span className="text-gray-500 text-sm">
-                            {exp.note}
-                          </span>
-                        )}
-                        {exp.location && (
-                          <span className="text-gray-400 text-sm">
-                            • {exp.location}
-                          </span>
-                        )}
-                      </div>
-
-                      {exp.system && (
-                        <div className="mb-4">
-                          <p className="text-purple-400 font-semibold">{exp.system}</p>
-                        </div>
-                      )}
-
-                      {exp.responsibilities && (
-                        <ul className="list-disc list-inside space-y-2 text-gray-300">
-                          {exp.responsibilities.map((resp, idx) => (
-                            <li key={idx} className="text-sm">{resp}</li>
-                          ))}
-                        </ul>
-                      )}
-
-                      {exp.systems && (
-                        <div className="space-y-4">
-                          {exp.systems.map((system, idx) => (
-                            <div key={idx}>
-                              <p className="text-purple-400 font-semibold mb-2">{system.name}</p>
-                              <ul className="list-disc list-inside space-y-2 text-gray-300">
-                                {system.responsibilities.map((resp, respIdx) => (
-                                  <li key={respIdx} className="text-sm">{resp}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
-                      {exp.positions && (
-                        <div className="space-y-3">
-                          {exp.positions.map((pos, idx) => (
-                            <div key={idx}>
-                              <p className="text-purple-400 font-semibold">{pos.role}</p>
-                              <p className="text-gray-300 text-sm">{pos.description}</p>
-                            </div>
-                          ))}
-                        </div>
+                      {exp.location && (
+                        <span className="text-gray-400 text-lg">
+                          {exp.location}
+                        </span>
                       )}
                     </div>
-                  </div>
-                  <div className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-16 md:-translate-y-0 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full border-4 border-gray-900 bg-purple-600 flex items-center justify-center">
-                      <Briefcase size={20} />
+                    <div className="flip-icon">
+                      <ArrowUpRight className="w-6 h-6 text-purple-400" />
                     </div>
                   </div>
                 </div>
+
+                {/* Back of card */}
+                <div className="card-face card-back">
+                  <div className="p-6 bg-gray-800 rounded-lg h-full overflow-y-auto card-content">
+                    {exp.system && (
+                      <div className="mb-4">
+                        <p className="text-purple-400 font-semibold text-xl mb-3">{exp.system}</p>
+                        <ul className="list-disc pl-6 space-y-2">
+                          {exp.responsibilities.map((resp, idx) => (
+                            <li key={idx} className="text-gray-300 text-lg leading-relaxed">{resp}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {exp.systems && (
+                      <div className="space-y-6">
+                        {exp.systems.map((sys, idx) => (
+                          <div key={idx}>
+                            <p className="text-purple-400 font-semibold text-xl mb-3">{sys.name}</p>
+                            <ul className="list-disc pl-6 space-y-2">
+                              {sys.responsibilities.map((resp, respIdx) => (
+                                <li key={respIdx} className="text-gray-300 text-lg leading-relaxed">{resp}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {exp.positions && (
+                      <div className="space-y-4">
+                        {exp.positions.map((pos, idx) => (
+                          <div key={idx} className="mb-4">
+                            <p className="text-purple-400 font-semibold text-xl mb-2">{pos.role}</p>
+                            <p className="text-gray-300 text-lg">{pos.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {exp.responsibilities && !exp.system && !exp.systems && !exp.positions && (
+                      <ul className="list-disc pl-6 space-y-2">
+                        {exp.responsibilities.map((resp, idx) => (
+                          <li key={idx} className="text-gray-300 text-lg leading-relaxed">{resp}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

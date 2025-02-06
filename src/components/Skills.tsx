@@ -1,3 +1,5 @@
+import '../styles/skills.css';
+
 interface SkillCategory {
   title: string;
   skills: string[];
@@ -63,31 +65,49 @@ export default function Skills() {
   return (
     <section id="skills" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">
+        <h2 className="text-5xl font-bold text-center mb-16">
           <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
             Skills & Expertise
           </span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {skillCategories.map((category, index) => (
             <div 
               key={index} 
-              className="bg-gray-800 rounded-lg p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="skill-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 relative overflow-hidden"
+              style={{ 
+                opacity: 0, 
+                animation: `fadeInUp 0.5s ease-out ${index * 0.2}s forwards` 
+              }}
             >
-              <h3 className="text-xl font-semibold mb-4 text-purple-400">
+              <h3 className="text-3xl font-bold mb-6 text-purple-400">
                 {category.title}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <li 
                     key={skillIndex}
-                    className="text-gray-300 hover:text-white flex items-center space-x-2"
+                    className="skill-item text-gray-300 hover:text-white"
                   >
-                    <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
-                    <span>{skill}</span>
+                    <div className="flex items-center space-x-3">
+                      <div className="skill-dot w-2 h-2 bg-pink-500 rounded-full"></div>
+                      <span className="text-lg">{skill}</span>
+                    </div>
+                    <div className="skill-progress">
+                      <div 
+                        className="skill-progress-bar"
+                        style={{ 
+                          animationDelay: `${skillIndex * 0.2}s`,
+                          width: '100%'
+                        }}
+                      ></div>
+                    </div>
                   </li>
                 ))}
               </ul>
+              {/* Background decoration */}
+              <div className="absolute -bottom-2 -right-2 w-24 h-24 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-xl"></div>
+              <div className="absolute -top-2 -left-2 w-16 h-16 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-lg"></div>
             </div>
           ))}
         </div>

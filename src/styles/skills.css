@@ -1,0 +1,94 @@
+/* Skill card animations */
+.skill-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+}
+
+.skill-progress {
+  position: relative;
+  height: 4px;
+  background: rgba(168, 85, 247, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.skill-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #a855f7 0%, #ec4899 100%);
+  transform-origin: left;
+  animation: progressAnimation 1.5s ease-out forwards;
+}
+
+@keyframes progressAnimation {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.skill-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.skill-card:hover .skill-item {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation for skills */
+.skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skill-item:nth-child(4) { animation-delay: 0.4s; }
+.skill-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Glowing dot animation */
+.skill-dot {
+  position: relative;
+}
+
+.skill-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: #ec4899;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(236, 72, 153, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(236, 72, 153, 0);
+  }
+}
