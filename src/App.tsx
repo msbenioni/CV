@@ -30,7 +30,7 @@ function App() {
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
-                    className="px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-all"
+                    className="px-3 py-2 rounded-md text-lg font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-all"
                   >
                     {item}
                   </a>
