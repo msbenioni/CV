@@ -1,0 +1,41 @@
+/* Project wrapper */
+.project-wrapper {
+  display: flex;
+  min-height: 500px;
+}
+
+/* Project card */
+.project-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(31, 41, 55);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Image container */
+.project-image-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: rgb(31, 41, 55);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tech tags */
+.tech-tag {
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  transform: translateY(-2px);
+  background: rgba(168, 85, 247, 0.2);
+}
