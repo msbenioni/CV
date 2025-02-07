@@ -21,7 +21,7 @@ export default function Hero() {
     <div className="relative min-h-[150vh] bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-900 via-purple-900 to-gray-900">
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <div 
-          className="text-center transform transition-transform duration-300"
+          className="text-center transform transition-transform duration-300 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           style={{ transform: `translateY(-${parallaxOffset}px)` }}
         >
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-4 animate-fade-in">
@@ -68,7 +68,7 @@ export default function Hero() {
 
         {/* About Section with Scroll Reveal */}
         <div 
-          className="absolute w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-500"
+          className="absolute w-full max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 transition-all duration-500"
           style={{ 
             opacity: aboutOpacity,
             transform: `translateY(${Math.min(scrollY - 200, 300)}px)`,
@@ -77,8 +77,8 @@ export default function Hero() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
             <div className="space-y-4 sm:space-y-6">
-              <h3 className="text-2xl sm:text-3xl font-bold text-purple-400">My Background</h3>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-400">My Background</h3>
+              <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed">
                 I bring a solid background in contracts administration and procurement, 
                 complemented by extensive hands-on experience in systems integration and 
                 management. Completing a Diploma in Digital Technology Development and 
@@ -87,8 +87,8 @@ export default function Hero() {
               </p>
             </div>
             <div className="space-y-4 sm:space-y-6">
-              <h3 className="text-2xl sm:text-3xl font-bold text-purple-400">Professional Summary</h3>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-400">Professional Summary</h3>
+              <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed">
                 Dynamic IT professional with a Diploma in Digital Technology Development 
                 and Design from Mission Ready HQ. Proficient in developing and managing 
                 software systems, e-commerce platforms, and integrating procurement tools 

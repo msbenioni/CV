@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import { ArrowUpRight } from 'lucide-react';
 import '../styles/experience.css';
 
@@ -138,10 +140,16 @@ const experiences = [
 ];
 
 export default function Experience() {
+  const [expandedExperience, setExpandedExperience] = useState<number | null>(null);
+
+  const toggleExperience = (index: number) => {
+    setExpandedExperience(expandedExperience === index ? null : index);
+  };
+
   return (
     <section id="experience" className="py-12 sm:py-16 lg:py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16">
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 sm:mb-16">
           <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
             Work Experience
           </span>
@@ -151,47 +159,73 @@ export default function Experience() {
           {experiences.map((experience, index) => (
             <div 
               key={index}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-purple-500/20"
+              className="relative bg-gray-800/50 backdrop-blur-sm rounded-xl border border-purple-500/20 overflow-hidden"
+              onClick={() => toggleExperience(index)}
             >
-              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-4 sm:mb-6">
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{experience.company}</h3>
-                  <p className="text-base sm:text-lg text-purple-300">{experience.title}</p>
+              <div className="p-6 sm:p-8 cursor-pointer">
+                <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{experience.company}</h3>
+                    <p className="text-base sm:text-lg text-purple-300">{experience.title}</p>
+                  </div>
+                  <div className="flex items-center mt-2 lg:mt-0">
+                    <p className="text-sm sm:text-base text-gray-400 mr-4">
+                      {experience.period} • {experience.location}
+                    </p>
+                    <ChevronDown
+                      className={`w-6 h-6 text-purple-300 transition-transform duration-300 ${
+                        expandedExperience === index ? 'transform rotate-180' : ''
+                      }`}
+                    />
+                  </div>
                 </div>
-                <p className="text-sm sm:text-base text-gray-400 mt-2 lg:mt-0">
-                  {experience.period} • {experience.location}
-                </p>
+
+                <div
+                  className={`mt-4 overflow-hidden transition-all duration-300 ${
+                    expandedExperience === index ? 'max-h-[500px]' : 'max-h-0'
+                  }`}
+                >
+                  <ul className="space-y-3">
+                    {experience.responsibilities && experience.responsibilities.map((responsibility, respIndex) => (
+                      <li key={respIndex} className="flex items-start space-x-3">
+                        <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
+                        <span className="text-sm sm:text-base text-gray-300">{responsibility}</span>
+                      </li>
+                    ))}
+                    {experience.systems && experience.systems.map((system, sysIndex) => (
+                      <li key={sysIndex} className="space-y-2">
+                        <div className="flex items-start space-x-3">
+                          <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
+                          <span className="text-sm sm:text-base font-medium text-purple-300">{system.name}</span>
+                        </div>
+                        <ul className="ml-6 space-y-2">
+                          {system.responsibilities.map((responsibility, respIndex) => (
+                            <li key={respIndex} className="flex items-start space-x-3">
+                              <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500/50 mt-2"></span>
+                              <span className="text-sm sm:text-base text-gray-300">{responsibility}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
+                    {experience.positions && experience.positions.map((position, posIndex) => (
+                      <li key={posIndex} className="space-y-1">
+                        <div className="flex items-start space-x-3">
+                          <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
+                          <span className="text-sm sm:text-base font-medium text-purple-300">{position.role}</span>
+                        </div>
+                        <p className="ml-5 text-sm sm:text-base text-gray-300">{position.description}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              <ul className="space-y-3">
-                {experience.responsibilities && experience.responsibilities.map((responsibility, respIndex) => (
-                  <li key={respIndex} className="flex items-start space-x-3">
-                    <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
-                    <span className="text-sm sm:text-base text-gray-300">{responsibility}</span>
-                  </li>
-                ))}
-                {experience.systems && experience.systems.map((system, sysIndex) => (
-                  <li key={sysIndex} className="flex items-start space-x-3">
-                    <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
-                    <span className="text-sm sm:text-base text-gray-300">{system.name}</span>
-                    <ul className="space-y-3">
-                      {system.responsibilities.map((responsibility, respIndex) => (
-                        <li key={respIndex} className="flex items-start space-x-3">
-                          <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
-                          <span className="text-sm sm:text-base text-gray-300">{responsibility}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
-                ))}
-                {experience.positions && experience.positions.map((position, posIndex) => (
-                  <li key={posIndex} className="flex items-start space-x-3">
-                    <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
-                    <span className="text-sm sm:text-base text-gray-300">{position.role}</span>
-                    <p className="text-sm sm:text-base text-gray-300">{position.description}</p>
-                  </li>
-                ))}
-              </ul>
+              {expandedExperience !== index && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 rounded-xl opacity-0 hover:opacity-100 transition-opacity">
+                  <span className="text-sm text-purple-300">Tap to view details</span>
+                </div>
+              )}
             </div>
           ))}
         </div>
