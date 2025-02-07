@@ -1,7 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 import Hero from './components/Hero';
-import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
@@ -71,7 +70,6 @@ function App() {
 
       <main>
         <Hero />
-        <About />
         <Projects />
         <Skills />
         <Experience />
