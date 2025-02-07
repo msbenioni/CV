@@ -1,0 +1,87 @@
+.slideshow-container {
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0;
+  margin: 0 -1rem;
+}
+
+@media (min-width: 640px) {
+  .slideshow-container {
+    padding: 2rem 0;
+    margin: 0;
+  }
+}
+
+.slideshow-track {
+  display: flex;
+  animation: slide 30s linear infinite;
+  width: calc(120px * 18); /* width of each item * 2 times number of items */
+}
+
+@media (min-width: 640px) {
+  .slideshow-track {
+    width: calc(150px * 18);
+  }
+}
+
+.slideshow-track:hover {
+  animation-play-state: paused;
+}
+
+.tech-item {
+  width: 120px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .tech-item {
+    width: 150px;
+    padding: 1rem;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-120px * 9)); /* width of each item * number of items */
+  }
+}
+
+@media (min-width: 640px) {
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-150px * 9));
+    }
+  }
+}
+
+/* Gradient overlays to hide the edges */
+.slideshow-container::before,
+.slideshow-container::after {
+  content: '';
+  height: 100%;
+  width: 15%;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+}
+
+.slideshow-container::before {
+  left: 0;
+  background: linear-gradient(to right, rgb(17, 24, 39) 0%, transparent 100%);
+}
+
+.slideshow-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgb(17, 24, 39) 0%, transparent 100%);
+}

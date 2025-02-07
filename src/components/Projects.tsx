@@ -122,55 +122,49 @@ export default function Projects() {
         </h2>
 
         {/* Projects Grid */}
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-12">
           {projects.map((project, index) => (
-            <div
-              key={project.title}
-              className={`bg-gray-800/50 backdrop-blur-sm rounded-xl border border-purple-500/20 overflow-hidden flex ${
-                index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-              } max-w-[90vw] mx-auto`}
-            >
-              {/* Project Image Container */}
-              <div className="w-1/2 relative">
-                <div className="w-full h-full">
+            <div key={project.title} className="flip-card aspect-[3/4] sm:aspect-[2/3] w-full">
+              <div className="flip-card-inner">
+                {/* Front of card (Image) */}
+                <div className="flip-card-front bg-gray-800/50 backdrop-blur-sm border border-purple-500/20">
                   <img
                     src={project.imageUrl}
                     alt={project.title}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-              </div>
 
-              {/* Project Details Container - matches image dimensions */}
-              <div className="w-1/2 relative">
-                <div className="absolute inset-0 p-[4%] flex flex-col justify-between overflow-y-auto">
-                  <div className="space-y-[3%]">
-                    <h3 className="text-[1.5vw] font-bold">
+                {/* Back of card (Content) */}
+                <div className="flip-card-back bg-gray-800/50 backdrop-blur-sm border border-purple-500/20">
+                  <div className="p-6 sm:p-10 flex flex-col h-full">
+                    <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
                       {project.title}
                     </h3>
-                    <p className="text-[1vw] text-gray-300">
+                    <p className="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-[0.4vw]">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-[0.6vw] py-[0.2vw] text-[0.7vw] rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                    <div className="mt-auto space-y-4 sm:space-y-6">
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                        {project.technologies.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-2 sm:px-2.5 py-0.5 sm:py-1 text-xs sm:text-sm rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm sm:text-lg text-purple-400 hover:text-purple-300 transition-colors"
+                      >
+                        Visit Website <ExternalLink className="ml-2 h-4 w-4 sm:h-6 sm:w-6" />
+                      </a>
                     </div>
                   </div>
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-[1vw] text-purple-400 hover:text-purple-300 transition-colors"
-                  >
-                    Visit Website 
-                    <ExternalLink className="ml-[0.5vw] w-[1vw] h-[1vw]" />
-                  </a>
                 </div>
               </div>
             </div>
