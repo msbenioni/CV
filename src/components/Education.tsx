@@ -3,101 +3,62 @@ import '../styles/education.css';
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-900 via-purple-900 to-gray-900">
+    <section id="education" className="py-12 sm:py-16 lg:py-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-900 via-purple-900 to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl font-bold text-center mb-16">
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16">
           <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
             Education
           </span>
         </h2>
-        <div className="max-w-4xl mx-auto">
-          <div className="education-card">
-            <div className="education-content p-10">
-              <div className="flex justify-between items-start mb-8">
-                <div>
-                  <h3 className="text-3xl font-bold text-white mb-4">
-                    MISSION READY HQ
-                  </h3>
-                  <p className="text-xl text-purple-400">
-                    Diploma in Digital Technology Development and Design
-                  </p>
-                  <p className="text-lg text-gray-400 mt-2">
-                    Aug 2024 - current • Auckland, NZ
-                  </p>
-                </div>
-                <div className="hidden lg:block">
-                  <GraduationCap
-                    size={140}
-                    className="text-purple-400/20 floating-icon"
-                  />
-                </div>
-              </div>
 
-              <div className="space-y-10">
-                <div className="component-item" style={{ transitionDelay: '0.1s' }}>
-                  <h4 className="text-2xl font-bold text-purple-400 mb-6">
-                    Component 1: Full Stack Developer
-                  </h4>
-                  <ul className="skill-list space-y-4">
-                    <li className="flex items-center text-lg text-gray-300">
-                      <span className="skill-dot"></span>
-                      Developed expertise in creating responsive web applications using modern frameworks and libraries
-                    </li>
-                    <li className="flex items-center text-lg text-gray-300">
-                      <span className="skill-dot"></span>
-                      Mastered server-side development and database management with focus on security best practices
-                    </li>
-                    <li className="flex items-center text-lg text-gray-300">
-                      <span className="skill-dot"></span>
-                      Implemented professional development workflows using IDEs and source code management tools
-                    </li>
-                    <li className="flex items-center text-lg text-gray-300">
-                      <span className="skill-dot"></span>
-                      Applied industry-standard coding practices and software licensing principles
-                    </li>
-                    <li className="flex items-center text-lg text-gray-300">
-                      <span className="skill-dot"></span>
-                      Gained proficiency in unit testing and quality assurance methodologies
-                    </li>
-                    <li className="flex items-center text-lg text-gray-300">
-                      <span className="skill-dot"></span>
-                      Explored emerging technologies including generative AI applications
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="component-item" style={{ transitionDelay: '0.3s' }}>
-                  <h4 className="text-2xl font-bold text-purple-400 mb-6">
-                    Component 2: Advanced Full Stack Developer (Cloud & AI)
-                  </h4>
-                  <ul className="skill-list space-y-4">
-                    <li className="flex items-center text-lg text-gray-300">
-                      <span className="skill-dot"></span>
-                      Implemented cloud services and AI solutions for enterprise-level applications
-                    </li>
-                    <li className="flex items-center text-lg text-gray-300">
-                      <span className="skill-dot"></span>
-                      Designed and developed systems using modern architectural patterns and DevOps practices
-                    </li>
-                    <li className="flex items-center text-lg text-gray-300">
-                      <span className="skill-dot"></span>
-                      Built advanced database solutions utilizing NoSQL and GraphQL technologies
-                    </li>
-                    <li className="flex items-center text-lg text-gray-300">
-                      <span className="skill-dot"></span>
-                      Created and integrated RESTful APIs and JSON-based services
-                    </li>
-                    <li className="flex items-center text-lg text-gray-300">
-                      <span className="skill-dot"></span>
-                      Applied Agile methodologies and Design Thinking principles in project development
-                    </li>
-                    <li className="flex items-center text-lg text-gray-300">
-                      <span className="skill-dot"></span>
-                      Gained practical experience working in collaborative project teams
-                    </li>
-                  </ul>
-                </div>
-              </div>
+        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 lg:p-10 border border-purple-500/20">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-6 sm:mb-8">
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">MISSION READY HQ</h3>
+              <p className="text-base sm:text-lg text-purple-300">Diploma in Digital Technology Development and Design</p>
+            </div>
+            <div className="mt-2 lg:mt-0">
+              <p className="text-sm sm:text-base text-gray-400">Aug 2024 - current • Auckland, NZ</p>
+            </div>
+          </div>
+
+          <div className="space-y-6 sm:space-y-8">
+            <div>
+              <h4 className="text-xl sm:text-2xl font-semibold text-purple-400 mb-4">Component 1: Full Stack Developer</h4>
+              <ul className="space-y-3">
+                {[
+                  "Developed expertise in creating responsive web applications using modern frameworks and libraries",
+                  "Mastered server-side development and database management with focus on security best practices",
+                  "Implemented professional development workflows using IDEs and source code management tools",
+                  "Applied industry-standard coding practices and software licensing principles",
+                  "Gained proficiency in unit testing and quality assurance methodologies",
+                  "Explored emerging technologies including generative AI applications"
+                ].map((point, index) => (
+                  <li key={index} className="flex items-start space-x-3">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
+                    <span className="text-sm sm:text-base text-gray-300">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xl sm:text-2xl font-semibold text-purple-400 mb-4">Component 2: Advanced Full Stack Developer (Cloud & AI)</h4>
+              <ul className="space-y-3">
+                {[
+                  "Implemented cloud services and AI solutions for enterprise-level applications",
+                  "Designed and developed systems using modern architectural patterns and DevOps practices",
+                  "Built advanced database solutions utilizing NoSQL and GraphQL technologies",
+                  "Created and integrated RESTful APIs and JSON-based services",
+                  "Applied Agile methodologies and Design Thinking principles in project development",
+                  "Gained practical experience working in collaborative project teams"
+                ].map((point, index) => (
+                  <li key={index} className="flex items-start space-x-3">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
+                    <span className="text-sm sm:text-base text-gray-300">{point}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

@@ -139,97 +139,59 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 bg-gray-900/50">
+    <section id="experience" className="py-12 sm:py-16 lg:py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl font-bold text-center mb-12">
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16">
           <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
             Work Experience
           </span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {experiences.map((exp, index) => (
-            <div
+
+        <div className="space-y-6 sm:space-y-8">
+          {experiences.map((experience, index) => (
+            <div 
               key={index}
-              className="group card-container"
-              style={{ opacity: 0, animation: `fadeIn 0.5s ease-out ${index * 0.2}s forwards` }}
+              className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-purple-500/20"
             >
-              <div className="card">
-                {/* Front of card */}
-                <div className="card-face card-front">
-                  <div className="p-8 bg-gray-800 rounded-lg h-full flex flex-col justify-center items-center text-center card-content">
-                    <h3 className="text-3xl font-bold mb-4">{exp.title}</h3>
-                    {exp.company && (
-                      <p className="text-purple-400 text-xl mb-4">{exp.company}</p>
-                    )}
-                    <div className="flex flex-col items-center gap-2">
-                      <p className="text-gray-400 text-lg">{exp.period}</p>
-                      {exp.note && (
-                        <span className="text-gray-500 text-lg">
-                          {exp.note}
-                        </span>
-                      )}
-                      {exp.location && (
-                        <span className="text-gray-400 text-lg">
-                          {exp.location}
-                        </span>
-                      )}
-                    </div>
-                    <div className="flip-icon">
-                      <ArrowUpRight className="w-6 h-6 text-purple-400" />
-                    </div>
-                  </div>
+              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-4 sm:mb-6">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{experience.company}</h3>
+                  <p className="text-base sm:text-lg text-purple-300">{experience.title}</p>
                 </div>
-
-                {/* Back of card */}
-                <div className="card-face card-back">
-                  <div className="p-6 bg-gray-800 rounded-lg h-full overflow-y-auto card-content">
-                    {exp.system && (
-                      <div className="mb-4">
-                        <p className="text-purple-400 font-semibold text-xl mb-3">{exp.system}</p>
-                        <ul className="list-disc pl-6 space-y-2">
-                          {exp.responsibilities.map((resp, idx) => (
-                            <li key={idx} className="text-gray-300 text-lg leading-relaxed">{resp}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {exp.systems && (
-                      <div className="space-y-6">
-                        {exp.systems.map((sys, idx) => (
-                          <div key={idx}>
-                            <p className="text-purple-400 font-semibold text-xl mb-3">{sys.name}</p>
-                            <ul className="list-disc pl-6 space-y-2">
-                              {sys.responsibilities.map((resp, respIdx) => (
-                                <li key={respIdx} className="text-gray-300 text-lg leading-relaxed">{resp}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-
-                    {exp.positions && (
-                      <div className="space-y-4">
-                        {exp.positions.map((pos, idx) => (
-                          <div key={idx} className="mb-4">
-                            <p className="text-purple-400 font-semibold text-xl mb-2">{pos.role}</p>
-                            <p className="text-gray-300 text-lg">{pos.description}</p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-
-                    {exp.responsibilities && !exp.system && !exp.systems && !exp.positions && (
-                      <ul className="list-disc pl-6 space-y-2">
-                        {exp.responsibilities.map((resp, idx) => (
-                          <li key={idx} className="text-gray-300 text-lg leading-relaxed">{resp}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
+                <p className="text-sm sm:text-base text-gray-400 mt-2 lg:mt-0">
+                  {experience.period} • {experience.location}
+                </p>
               </div>
+
+              <ul className="space-y-3">
+                {experience.responsibilities && experience.responsibilities.map((responsibility, respIndex) => (
+                  <li key={respIndex} className="flex items-start space-x-3">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
+                    <span className="text-sm sm:text-base text-gray-300">{responsibility}</span>
+                  </li>
+                ))}
+                {experience.systems && experience.systems.map((system, sysIndex) => (
+                  <li key={sysIndex} className="flex items-start space-x-3">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
+                    <span className="text-sm sm:text-base text-gray-300">{system.name}</span>
+                    <ul className="space-y-3">
+                      {system.responsibilities.map((responsibility, respIndex) => (
+                        <li key={respIndex} className="flex items-start space-x-3">
+                          <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
+                          <span className="text-sm sm:text-base text-gray-300">{responsibility}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
+                {experience.positions && experience.positions.map((position, posIndex) => (
+                  <li key={posIndex} className="flex items-start space-x-3">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 mt-2"></span>
+                    <span className="text-sm sm:text-base text-gray-300">{position.role}</span>
+                    <p className="text-sm sm:text-base text-gray-300">{position.description}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
