@@ -3,7 +3,7 @@ import '../styles/education.css';
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 bg-gray-900">
+    <section id="education" className="py-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-900 via-purple-900 to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-5xl font-bold text-center mb-16">
           <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">

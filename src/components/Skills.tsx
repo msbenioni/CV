@@ -63,7 +63,7 @@ const skillCategories: SkillCategory[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 bg-gray-900">
+    <section id="skills" className="py-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-900 via-purple-900 to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-5xl font-bold text-center mb-16">
           <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
@@ -74,13 +74,13 @@ export default function Skills() {
           {skillCategories.map((category, index) => (
             <div 
               key={index} 
-              className="skill-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 relative overflow-hidden"
+              className="skill-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 relative overflow-hidden border border-white/10 hover:border-white/20 transition-colors"
               style={{ 
                 opacity: 0, 
                 animation: `fadeInUp 0.5s ease-out ${index * 0.2}s forwards` 
               }}
             >
-              <h3 className="text-3xl font-bold mb-6 text-purple-400">
+              <h3 className="text-3xl font-bold mb-6 text-purple-300">
                 {category.title}
               </h3>
               <ul className="space-y-4">

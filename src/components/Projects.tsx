@@ -79,18 +79,18 @@ export default function Projects() {
             >
               {/* Project Image */}
               <div className="lg:w-1/2 h-full">
-                <div className="project-image-container">
+                <div className="aspect-video overflow-hidden rounded-xl border border-purple-500/20">
                   <img
                     src={project.imageUrl}
                     alt={project.title}
-                    className="project-image"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
 
               {/* Project Content */}
               <div className="lg:w-1/2 h-full">
-                <div className="project-card p-8">
+                <div className="project-card p-8 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-purple-500/20">
                   <h3 className="text-3xl font-bold text-white mb-4">
                     {project.title}
                   </h3>
