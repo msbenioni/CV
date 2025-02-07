@@ -1,0 +1,48 @@
+@keyframes float {
+  0%, 100% {
+    transform: translate(var(--tx), var(--ty)) rotate(0deg);
+  }
+  25% {
+    transform: translate(calc(var(--tx) + 20px), calc(var(--ty) - 10px)) rotate(90deg);
+  }
+  50% {
+    transform: translate(calc(var(--tx) - 5px), calc(var(--ty) + 15px)) rotate(180deg);
+  }
+  75% {
+    transform: translate(calc(var(--tx) - 15px), calc(var(--ty) - 5px)) rotate(270deg);
+  }
+}
+
+@keyframes shoot-out {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: 
+      translate(
+        calc(-50% + var(--shoot-distance) * cos(var(--angle))), 
+        calc(-50% + var(--shoot-distance) * sin(var(--angle)))
+      ) 
+      scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: 
+      translate(
+        calc(-50% + var(--final-x)), 
+        calc(-50% + var(--final-y))
+      ) 
+      scale(1);
+  }
+}
+
+.tech-icon {
+  --tx: 0px;
+  --ty: 0px;
+  --shoot-distance: 100px;
+  --angle: 0deg;
+  --final-x: 0px;
+  --final-y: 0px;
+}
