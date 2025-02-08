@@ -38,10 +38,13 @@ export default function Education() {
   return (
     <section id="education" className="py-12 sm:py-16 lg:py-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-900 via-purple-900 to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16">
-          <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-            Education
-          </span>
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12">
+          <div className="flex items-center justify-center gap-4">
+            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+              Education
+            </span>
+            <GraduationCap className="text-purple-400" size={64} strokeWidth={1.5} />
+          </div>
         </h2>
 
         <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 lg:p-10 border border-purple-500/20">

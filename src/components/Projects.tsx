@@ -15,6 +15,7 @@ import {
   SiFreelancer
 } from 'react-icons/si';
 import { TbBrandFramerMotion } from 'react-icons/tb';
+import { Folders, Wrench } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import '../styles/projects.css';
 
@@ -115,10 +116,13 @@ export default function Projects() {
   return (
     <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 sm:mb-16">
-          <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-            Projects
-          </span>
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12">
+          <div className="flex items-center justify-center gap-4">
+            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+              Projects
+            </span>
+            <Folders className="text-purple-400" size={48} strokeWidth={1.5} />
+          </div>
         </h2>
 
         {/* Projects Grid */}
@@ -174,9 +178,12 @@ export default function Projects() {
         {/* Technologies section */}
         <div id="tech-section" className="mt-20 text-center">
           <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-              Key Technologies
-            </span>
+            <div className="flex items-center justify-center gap-4">
+              <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+                Key Technologies
+              </span>
+              <Wrench className="text-purple-400" size={48} strokeWidth={1.5} />
+            </div>
           </h2>
           
           <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-8 sm:gap-10 lg:gap-12 items-center justify-center py-8">

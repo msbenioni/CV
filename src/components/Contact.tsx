@@ -55,9 +55,12 @@ export default function Contact() {
     <section id="contact" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-5xl font-bold text-center mb-16">
-          <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-            Contact Me
-          </span>
+          <div className="flex items-center justify-center gap-4">
+            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+              Contact Me
+            </span>
+            <Mail className="text-purple-400" size={48} strokeWidth={1.5} />
+          </div>
         </h2>
         
         <div className="max-w-3xl mx-auto relative">
