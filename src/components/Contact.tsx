@@ -64,10 +64,10 @@ export default function Contact() {
         </h2>
         
         <div className="max-w-3xl mx-auto relative">
-          <div className="contact-card bg-gray-800 rounded-xl p-10 shadow-xl">
-            <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="contact-card bg-gray-800 rounded-xl p-6 sm:p-10 shadow-xl">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-8">
               <div className="form-field">
-                <label htmlFor="name" className="form-label block text-lg font-medium text-gray-300 mb-3">
+                <label htmlFor="name" className="form-label block text-base sm:text-lg font-medium text-gray-300 mb-2 sm:mb-3">
                   Name
                 </label>
                 <div className="form-input">
@@ -77,7 +77,7 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 rounded-lg bg-gray-700/50 border border-gray-600 text-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+                    className="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-lg bg-gray-700/50 border border-gray-600 text-base sm:text-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                     required
                     disabled={status === 'sending'}
                   />
@@ -85,7 +85,7 @@ export default function Contact() {
               </div>
 
               <div className="form-field">
-                <label htmlFor="email" className="form-label block text-lg font-medium text-gray-300 mb-3">
+                <label htmlFor="email" className="form-label block text-base sm:text-lg font-medium text-gray-300 mb-2 sm:mb-3">
                   Email
                 </label>
                 <div className="form-input">
@@ -95,7 +95,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 rounded-lg bg-gray-700/50 border border-gray-600 text-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+                    className="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-lg bg-gray-700/50 border border-gray-600 text-base sm:text-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                     required
                     disabled={status === 'sending'}
                   />
@@ -103,7 +103,7 @@ export default function Contact() {
               </div>
 
               <div className="form-field">
-                <label htmlFor="message" className="form-label block text-lg font-medium text-gray-300 mb-3">
+                <label htmlFor="message" className="form-label block text-base sm:text-lg font-medium text-gray-300 mb-2 sm:mb-3">
                   Message
                 </label>
                 <div className="form-input">
@@ -112,8 +112,8 @@ export default function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={5}
-                    className="w-full px-6 py-4 rounded-lg bg-gray-700/50 border border-gray-600 text-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+                    rows={4}
+                    className="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-lg bg-gray-700/50 border border-gray-600 text-base sm:text-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                     required
                     disabled={status === 'sending'}
                   ></textarea>
