@@ -191,10 +191,10 @@ export default function Projects() {
                 }}
               >
                 <div 
-                  className="w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-200"
+                  className="w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-200"
                   style={{ 
                     color: tech.color,
-                    fontSize: '6rem',
+                    fontSize: '4rem',
                     lineHeight: 1
                   }}
                 >

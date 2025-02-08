@@ -1,4 +1,5 @@
 import '../styles/skills.css';
+import { ChevronDown } from 'lucide-react';
 
 interface SkillCategory {
   title: string;
@@ -80,8 +81,9 @@ export default function Skills() {
                 animation: `fadeInUp 0.5s ease-out ${index * 0.2}s forwards` 
               }}
             >
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-purple-300">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-purple-300 flex items-center gap-2">
                 {category.title}
+                <ChevronDown size={24} className="text-gray-400" />
               </h3>
               <ul className="space-y-3 sm:space-y-4">
                 {category.skills.map((skill, skillIndex) => (

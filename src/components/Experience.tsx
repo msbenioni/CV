@@ -223,7 +223,6 @@ export default function Experience() {
 
               {expandedExperience !== index && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/20 rounded-xl opacity-0 hover:opacity-100 transition-opacity">
-                  <span className="text-sm text-purple-300">Tap to view details</span>
                 </div>
               )}
             </div>
