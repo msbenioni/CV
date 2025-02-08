@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, ArrowUpRight, Briefcase } from 'lucide-react';
+import { ChevronDown, Briefcase } from 'lucide-react';
 import '../styles/experience.css';
 
 const experiences = [

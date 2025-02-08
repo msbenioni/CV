@@ -2,7 +2,7 @@ import '../styles/hero.css';
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center py-10 sm:py-16 bg-gray-900">
+    <section className="min-h-screen flex flex-col items-center justify-center py-20 sm:py-16 bg-gray-900">
       <div className="text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-4">
           <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
