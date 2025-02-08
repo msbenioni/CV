@@ -177,7 +177,7 @@ export default function Projects() {
 
         {/* Technologies section */}
         <div id="tech-section" className="mt-20 text-center">
-          <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12">
             <div className="flex items-center justify-center gap-4">
               <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
                 Key Technologies
@@ -186,7 +186,7 @@ export default function Projects() {
             </div>
           </h2>
           
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-8 sm:gap-10 lg:gap-12 items-center justify-center py-8">
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-8 lg:gap-12 items-center justify-center py-4 sm:py-8">
             {technologies.map((tech, index) => (
               <div
                 key={index}
@@ -198,16 +198,19 @@ export default function Projects() {
                 }}
               >
                 <div 
-                  className="w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-200"
+                  className="w-14 h-14 sm:w-24 sm:h-24 flex items-center justify-center mb-2 sm:mb-4 transform group-hover:scale-110 transition-transform duration-200"
                   style={{ 
                     color: tech.color,
-                    fontSize: '4rem',
-                    lineHeight: 1
+                    fontSize: '2rem',
+                    lineHeight: 1,
+                    '@media (min-width: 640px)': {
+                      fontSize: '4rem'
+                    }
                   }}
                 >
                   {tech.icon}
                 </div>
-                <span className="text-lg sm:text-xl text-gray-400 group-hover:text-gray-300 transition-colors">
+                <span className="text-xs sm:text-lg text-gray-400 group-hover:text-gray-300 transition-colors">
                   {tech.name}
                 </span>
               </div>
