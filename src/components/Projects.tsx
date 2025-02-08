@@ -198,14 +198,10 @@ export default function Projects() {
                 }}
               >
                 <div 
-                  className="w-14 h-14 sm:w-24 sm:h-24 flex items-center justify-center mb-2 sm:mb-4 transform group-hover:scale-110 transition-transform duration-200"
+                  className="w-14 h-14 sm:w-24 sm:h-24 flex items-center justify-center mb-2 sm:mb-4 transform group-hover:scale-110 transition-transform duration-200 tech-icon"
                   style={{ 
                     color: tech.color,
-                    fontSize: '2rem',
-                    lineHeight: 1,
-                    '@media (min-width: 640px)': {
-                      fontSize: '4rem'
-                    }
+                    lineHeight: 1
                   }}
                 >
                   {tech.icon}
