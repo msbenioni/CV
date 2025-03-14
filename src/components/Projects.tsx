@@ -72,7 +72,7 @@ const projects: Project[] = [
       'Resend',
       'React Hook Form'
     ],
-    liveUrl: 'https://duolinko.com',
+    liveUrl: 'https://duolinko.netlify.app',
     imageUrl: '/Duo-Linko.webp'
   }
 ];
